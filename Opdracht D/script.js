@@ -3,7 +3,7 @@ container.style.maxWidth = "600px";
 container.style.margin = "0 auto";
 container.style.backgroundColor = "grey";
 const BUTTONAMOUNT = 60;
-const CLICKS = ["red", "purple", "black"];
+const CLICKS = ["green", "red", "purple", "black"];
 for (let index = 1; index < BUTTONAMOUNT+1; index++) {
     var button = document.createElement("button");
     button.innerHTML = index;
@@ -23,15 +23,11 @@ function pressed(button){
     if(button.style.backgroundColor == "black"){
         button.remove();
     }
-    else if(button.style.backgroundColor == "green"){
-        button.style.backgroundColor = CLICKS[0];
-    }
     else{
         for (let i = CLICKS.length; i >= 0; i--) {
             if(button.style.backgroundColor == CLICKS[i]){
                 button.style.backgroundColor = CLICKS[i+1]
             }
         }
-    }
-    
+    }  
 }
